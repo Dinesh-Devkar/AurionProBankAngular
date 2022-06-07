@@ -1,0 +1,6 @@
+.dropdown-toggle::after {
+    display:none;
+}
+.loginMargin{
+    margin-left: -50px;
+}
