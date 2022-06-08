@@ -1,0 +1,10 @@
+div.container{
+    background-color: antiquewhite;
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border-style: groove;
+    border-width: 5px;
+    border-color: darkslateblue;
+}
