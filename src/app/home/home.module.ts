@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 
@@ -28,6 +29,7 @@ import { LandingComponent } from './landing/landing.component';
     HttpClientModule,
     BrowserModule,
     RouterModule,
+    SlickCarouselModule
     
   ],
   exports:[

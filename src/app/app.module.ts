@@ -8,16 +8,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthUserService } from './home/services/auth-user.service';
 import { TokenIntercepterService } from './home/services/token-intercepter.service';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    NgbModule
+    NgbModule,
+    SlickCarouselModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenIntercepterService,multi:true}],
   bootstrap: [AppComponent]
