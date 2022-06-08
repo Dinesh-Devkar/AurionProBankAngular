@@ -12,6 +12,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
+import { TransactionPageComponent } from './transaction-page/transaction-page.component';
+import { PassbookPageComponent } from './passbook-page/passbook-page.component';
 
 
 
@@ -20,7 +23,10 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     NavbarComponent,
     LoginformComponent,
     RegisterComponent,
-    LandingComponent
+    LandingComponent,
+    CustomerDashboardComponent,
+    TransactionPageComponent,
+    PassbookPageComponent
   ],
   imports: [
     CommonModule,
