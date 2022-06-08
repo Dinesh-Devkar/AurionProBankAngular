@@ -21,6 +21,7 @@ import { CustomersPageComponent } from './customers-page/customers-page.componen
 
 
 
+
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -41,7 +42,8 @@ import { CustomersPageComponent } from './customers-page/customers-page.componen
     HttpClientModule,
     BrowserModule,
     RouterModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+   
     
   ],
   exports:[

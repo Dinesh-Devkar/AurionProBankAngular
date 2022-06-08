@@ -9,12 +9,13 @@ import { AuthUserService } from '../services/auth-user.service';
 })
 export class RegisterComponent implements OnInit {
 
+  minimumBalance:number=500;
   result:string=''
   registerForm=new FormGroup({
-    accountNumber:new FormControl('',[Validators.required]),
-    name:new FormControl(''),
-    balance:new FormControl(''),
-    password:new FormControl(''),
+    accountNumber:new FormControl('',[Validators.required,Validators.pattern("^[0-9]{12}|[0-9]{15}$]")]),
+    name:new FormControl('',Validators.required),
+    balance:new FormControl('',[Validators.required,Validators.min(this.minimumBalance)]),
+    password:new FormControl('',Validators.required),
     roll:new FormControl('')
   })
   
@@ -32,6 +33,9 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  get accountNumber(){
+    return this.registerForm.get('acountNumber')
   }
 
 }

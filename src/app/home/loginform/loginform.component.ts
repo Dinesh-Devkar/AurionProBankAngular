@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl } from '@angular/forms';
+import { FormGroup,FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthUserService } from '../services/auth-user.service';
 
@@ -22,8 +22,8 @@ export class LoginformComponent implements OnInit {
     token: ""
   }
   loginForm=new FormGroup({
-    userName:new FormControl(''),
-    password:new FormControl('')
+    userName:new FormControl('',Validators.required),
+    password:new FormControl('',Validators.required)
   })
   userData:{userName:string,password:string}={userName:"",password:""}
   constructor(private auth:AuthUserService,private router:Router) { 

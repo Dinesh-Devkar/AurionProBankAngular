@@ -1,7 +1,4 @@
 <div class="container md col-md-5">
-
-
-
 <form [formGroup]="loginForm" (ngSubmit)="VerifyUser()">
     <div class="form-group">
       <label for="exampleInputEmail1">UserName</label>
@@ -11,7 +8,7 @@
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" placeholder="Enter Password" formControlName="password">
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
   </form>
 </div>
   <!-- <br><br><br><br><br>
