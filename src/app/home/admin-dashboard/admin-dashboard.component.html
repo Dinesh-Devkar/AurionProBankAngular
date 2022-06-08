@@ -1,36 +1,30 @@
 <div class="container">
+    <h1>Hello Admin</h1>
     <div class="row">
-        <div class="col-md-5 border" id="customerinfo">
-            <h2>Name : {{loggedInUser.name}}</h2>
+        <div class="col-md-5 border">
+            <!-- <h2>Name :  {{loggedInUser.name}}</h2>
             <h2>AccountNumber : {{loggedInUser.accountNumber}}</h2>
             <h2>Balance : &#8377; {{[loggedInUser.balance]}}</h2> -->
             <app-accounts-details></app-accounts-details>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-6 border" id="dotransaction" [hidden]="HideBox">
+        <div class="col-md-6 border" [hidden]="HideBox" style="height: 400px;">
             <button class="btn btn-info" (click)="ShowPassbook()">PassBook</button>
             <button class="btn btn-info" (click)="ShowTransaction()">Do Transaction</button>
+            <button class="btn btn-info" (click)="ShowCustomers()">Show Customers</button>
         </div>
-        <div class="col-md-6 border" id="passbook" [hidden]="ShowPassbookPage">
+        <div class="col-md-6 border" [hidden]="ShowPassbookPage">
             <app-passbook-page></app-passbook-page>
             <button class="btn btn-info" (click)="ShowPassbook()">Back</button>
         </div>
-        <div class="col-md-6 border" id="showTransaction" [hidden]="ShowTransactionPage">
+        <div class="col-md-6 border" [hidden]="ShowTransactionPage">
             <app-transaction-page></app-transaction-page>
             <button class="btn btn-info" (click)="ShowTransaction()">Back</button>
         </div>
+        <div class="col-md-6 border" [hidden]="ShowCustomersPage">
+            <app-customers-page></app-customers-page>
+            <button class="btn btn-info" (click)="ShowCustomers()">Back</button>
+        </div>
     </div>
 </div>
-<div class="container">
-<div class="row">
-    <div class="col-md-2 card" >
-        <i class="fa-solid fa-piggy-bank"></i>
-    </div>
-    <div class="col-md-1 "></div>
-    <div class="col-md-2 card" ></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-2 card" ></div>
-    <div class="col-md-1"></div>
-    <div class="col-md-2 card" ></div>
-</div>
-</div>
+

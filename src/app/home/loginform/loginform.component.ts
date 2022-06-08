@@ -27,9 +27,7 @@ export class LoginformComponent implements OnInit {
   })
   userData:{userName:string,password:string}={userName:"",password:""}
   constructor(private auth:AuthUserService,private router:Router) { 
-    console.log("LLLLLLLLLLLLLLLLLLLLLLLL")
     this.auth.GetAllAccounts().subscribe(data=>{
-      console.log("DDDDDDDDDDDDDDDDDDDDDDDDDDdd")
       this.d=data;
       console.log(data)
     })
@@ -46,6 +44,9 @@ export class LoginformComponent implements OnInit {
     this.auth.SetLoggedInUser(res);
     if(this.loggedInUser.roll=="C"){
       this.router.navigate(['/customerDashboard']);
+    }
+    else if(this.loggedInUser.roll=="A"){
+      this.router.navigate(['/adminDashboard']);
     }
   });
   // alert(this.userData.userName+"       "+this.userData.password)
