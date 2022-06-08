@@ -7,24 +7,33 @@ import {HttpClientModule} from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenIntercepterService } from './services/token-intercepter.service';
 import { AuthUserService } from './services/auth-user.service';
+import { RegisterComponent } from './register/register.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { LandingComponent } from './landing/landing.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    LoginformComponent
+    LoginformComponent,
+    RegisterComponent,
+    LandingComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserModule,
+    RouterModule,
     
   ],
   exports:[
     NavbarComponent,
-    LoginformComponent
+    LoginformComponent,
+    RegisterComponent,
   ],
   providers: [AuthUserService]
 })
