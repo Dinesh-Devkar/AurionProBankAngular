@@ -1,11 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
+import { IUser } from '../loginform/loginform.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthUserService {
 
+  loggedInUser:IUser={
+    id:0,
+    name: "",
+    accountNumber:0,
+    roll: "",
+    isSuccess: false,
+    message: "",
+    balance:0,
+    token: ""
+  }
   constructor(private http:HttpClient) { }
  
 
@@ -17,6 +28,7 @@ export class AuthUserService {
     // return "Login Fail";
     console.log("Service method call")
     console.log("User : ",user)
+    console.log(user.userName+"     "+user.password)
     
     return this.http.post("http://localhost:5000/api/v1/Account/LoginAccount",user);
   }
@@ -28,5 +40,11 @@ export class AuthUserService {
   AdminDashboard(){
     console.log("Inside AdminDashboard Method");
     return this.http.get("http://localhost:5000/api/v1/Account/Admin");
+  }
+  GetLoggedInUser():IUser{
+    return this.loggedInUser
+  }
+  SetLoggedInUser(user:IUser):void{
+    this.loggedInUser=user
   }
 }
