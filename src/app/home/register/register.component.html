@@ -11,56 +11,63 @@
 
                   <!-- Form Begin -->
   
-                  <form class="mx-1 mx-md-4">
+                  <form class="mx-1 mx-md-4" [formGroup]="registerForm">
   
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <input type="number" id="" class="form-control" />
                           <label class="form-label" for="form3Example3c">Account Number</label>
+                          <input type="number" id="" class="form-control"  formControlName="accountNumber" />
+                          
                         </div>
                       </div>
 
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" class="form-control" />
                         <label class="form-label" for="form3Example1c">Your Name</label>
+                        <input type="text" id="form3Example1c" class="form-control"formControlName="name" />
+                        
                       </div>
                     </div> 
 
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <input type="number" id="" class="form-control" />
                           <label class="form-label" for="form3Example3c">Amount</label>
+                          <input type="number" id="" class="form-control" formControlName="balance"/>
+                          
                         </div>
                       </div>
   
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4c" class="form-control" />
                         <label class="form-label" for="form3Example4c">Password</label>
+                        <input type="password" id="form3Example4c" class="form-control" formControlName="password"/>
+                        
                       </div>
                     </div>
   
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4cd" class="form-control" />
                         <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                        <input type="password" id="form3Example4cd" class="form-control" />
+                        
                       </div>
                     </div>
                     
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <select name="Role" id="">
-                              <option value="Customer">Customer</option>
-                              <option value="Admin">Admin</option>
+                          <label class="form-label" for="form3Example4cd" style="margin-right: 20px;">Role</label>
+                          <select name="Role" id="" formControlName="roll">
+                            
+                              <option value="C">Customer</option>
+                              <option value="A">Admin</option>
                           </select>
-                          <label class="form-label" for="form3Example4cd">Role</label>
+                         
                         </div>
                       </div>
   
@@ -72,7 +79,7 @@
                     </div> -->
   
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="button" class="btn btn-primary btn-lg">Register</button>
+                      <button type="button" class="btn btn-primary btn-lg" (click)="RegisterCustomer()">Register</button>
                     </div>
   
                   </form>

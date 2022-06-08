@@ -15,6 +15,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { TransactionPageComponent } from './transaction-page/transaction-page.component';
 import { PassbookPageComponent } from './passbook-page/passbook-page.component';
+import { AccountsDetailsComponent } from './accounts-details/accounts-details.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { CustomersPageComponent } from './customers-page/customers-page.component';
 
 
 
@@ -26,7 +29,10 @@ import { PassbookPageComponent } from './passbook-page/passbook-page.component';
     LandingComponent,
     CustomerDashboardComponent,
     TransactionPageComponent,
-    PassbookPageComponent
+    PassbookPageComponent,
+    AccountsDetailsComponent,
+    AdminDashboardComponent,
+    CustomersPageComponent
   ],
   imports: [
     CommonModule,

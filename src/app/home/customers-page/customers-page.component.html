@@ -3,17 +3,19 @@
         <thead>
           <tr>
             <th scope="col">Name</th>
+            <th scope="col">AccountNumber</th>
             <th scope="col">Balance</th>
-            <th scope="col">TransactionDate</th>
-            <th scope="col">TransactionType</th>
+            
+            
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let transaction of transactionsList">
+          <tr *ngFor="let transaction of customersList">
             <th scope="row">{{transaction.name}}</th>
+            <td>{{transaction.accountNumber}}</td>
             <td>{{transaction.balance}}</td>
-            <td>{{transaction.transactionDate}}</td>
-            <td>{{transaction.transactionType}}</td>
+            
+            
           </tr>
         </tbody>
       </table>
