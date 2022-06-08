@@ -19,6 +19,15 @@ export class AuthUserService {
   }
   constructor(private http:HttpClient) { }
  
+  RegisterAccount(account:{
+    accountNumber: number,
+    name: string,
+    balance: number,
+    roll: string,
+    password: string
+  }){
+    return this.http.post("http://localhost:5000/api/v1/Account/AddAccount",account);
+  }
 
   VerifyUser(user:{userName:string,password:string}):any{
     // if(user.userName=="admin" && user.password=="12345")
@@ -46,5 +55,11 @@ export class AuthUserService {
   }
   SetLoggedInUser(user:IUser):void{
     this.loggedInUser=user
+  }
+  UpdateAccountData(accountId:number){
+    return this.http.get(`http://localhost:5000/api/v1/Account/${accountId}/GetAccount`)
+  }
+  SetBalance(amount:number){
+     this.loggedInUser.balance+=amount
   }
 }
