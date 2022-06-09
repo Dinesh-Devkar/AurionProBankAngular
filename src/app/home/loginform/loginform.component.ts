@@ -19,6 +19,7 @@ export class LoginformComponent implements OnInit {
     isSuccess: false,
     message: "",
     balance:0,
+    status:'',
     token: ""
   }
   loginForm=new FormGroup({
@@ -38,14 +39,21 @@ export class LoginformComponent implements OnInit {
   this.userData=this.loginForm.value
   this.auth.VerifyUser(this.userData).subscribe((res:IUser)=>{
     this.loggedInUser=res;
-    localStorage.setItem('token',this.loggedInUser.token);
+    
     console.log("My Data  : ",res);
     this.auth.SetLoggedInUser(res);
-    if(this.loggedInUser.roll=="C"){
-      this.router.navigate(['/customerDashboard']);
+    if(this.loggedInUser.status=="ACTIVE"){
+      localStorage.setItem('token',this.loggedInUser.token);
+      this.auth.SetLoggedInUser(res);
+      if(this.loggedInUser.roll=="C"){
+        this.router.navigate(['/customerDashboard']);
+      }
+      else if(this.loggedInUser.roll=="A"){
+        this.router.navigate(['/adminDashboard']);
+      }
     }
-    else if(this.loggedInUser.roll=="A"){
-      this.router.navigate(['/adminDashboard']);
+    else if(this.loggedInUser.status=="DEACTIVE"){
+      this.router.navigate(['/accountDeactive'])
     }
   });
   // alert(this.userData.userName+"       "+this.userData.password)
@@ -73,6 +81,7 @@ export interface IUser{
   roll: string,
   isSuccess: boolean,
   message: string,
-  balance:number
+  balance:number,
+  status:string,
   token: string
 }

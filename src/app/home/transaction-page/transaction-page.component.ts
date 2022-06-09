@@ -12,6 +12,7 @@ import { TransactionServiceService } from '../services/transaction-service.servi
 export class TransactionPageComponent implements OnInit {
 
   loggeInUser:IUser
+  transactionStatus:string=''
   transactionForm=new FormGroup({
     amount:new FormControl('',[Validators.required]),
     transactionType:new FormControl('',[Validators.required])
@@ -23,13 +24,15 @@ export class TransactionPageComponent implements OnInit {
    async DoTransaction(){
     if(this.transactionForm.valid){
       alert(this.transactionForm.value.amount+"     "+this.transactionForm.value.transactionType)
-        this.http.DoTransaction(this.transactionForm.value).subscribe(res=>{
+        this.http.DoTransaction(this.transactionForm.value).subscribe((res:any)=>{
           alert("Inside Transaction")
         alert(res)
-
+        this.transactionStatus=res;
+        setTimeout(()=>{
+          this.transactionStatus=''
+        },3000)
         //console.log("TTTTTTTTTTTTTTTTTTTT")
         console.log(res)
-        
       })
       this.userService.UpdateAccountData(this.userService.GetLoggedInUser().id).subscribe((data)=>{
         //this.userService.SetLoggedInUser(data);

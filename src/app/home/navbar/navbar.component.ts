@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthUserService } from '../services/auth-user.service';
 
 
 @Component({
@@ -9,17 +10,24 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  ShowLogInLogOutBtn:boolean=true
-  constructor(private router:Router) { }
+  ShowLogInLogOutBtn: boolean = true
+  constructor(private router: Router,private authService:AuthUserService) { }
 
   ngOnInit(): void {
+    this.authService.RefreshRequired.subscribe(res=>{
+      
+        this.ToggleButton();
+      })
+      
   }
-  LogOut(){
+  LogOut() {
     localStorage.clear();
-this.router.navigate(['/landing'])
+    this.ToggleButton()
+    this.router.navigate(['/landing']);
+
   }
-  ToggleButton(){
-    this.ShowLogInLogOutBtn=!this.ShowLogInLogOutBtn
+  ToggleButton() {
+    this.ShowLogInLogOutBtn = !this.ShowLogInLogOutBtn
   }
 
 }

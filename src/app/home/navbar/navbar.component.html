@@ -34,10 +34,10 @@
         
                 </ul>
               </li>             -->
-              <button class="btn btn-info" [routerLink]="['login']" [hidden]="!ShowLogInLogOutBtn" (click)="ToggleButton()">Login</button>
+              <button class="btn btn-info" [routerLink]="['login']" [hidden]="!ShowLogInLogOutBtn">Login</button>
               <button class="btn btn-info" (click)="LogOut()" [hidden]="ShowLogInLogOutBtn">LogOut</button>
         </ul>
-          <button class="btn btn-outline-success" [routerLink]="['register']" routerLinkActive="router-link-active" >Register
+          <button class="btn btn-outline-info" [routerLink]="['register']" routerLinkActive="router-link-active" >Register
          
           </button>
           <!-- <a routerLink="/register">Register</a> -->

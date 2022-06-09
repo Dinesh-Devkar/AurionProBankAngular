@@ -12,8 +12,10 @@ export class AccountsDetailsComponent implements OnInit {
 
   loggedInUser:any
   result:any
+  id:number=0
   constructor(private userService:AuthUserService,private transactionService:TransactionServiceService) {
     this.loggedInUser=this.userService.GetLoggedInUser();
+    this.id=userService.GetLoggedInUser().id;
    }
 
   ngOnInit(): void {
@@ -25,9 +27,9 @@ export class AccountsDetailsComponent implements OnInit {
       alert("Subscribe Transaction : ")
       // this.loggedInUser=this.userService.GetLoggedInUser();
       // alert(this.loggedInUser.name+"         "+this.loggedInUser.balance);
-      alert("Logged In User Id : "+this.loggedInUser.id)
+      alert("Logged In User Id : "+this.id)
       alert(this.loggedInUser.accountId);
-      this.result=this.userService.UpdateAccountData(4).subscribe(data=>{
+      this.result=this.userService.UpdateAccountData(this.id).subscribe(data=>{
           alert("Updated Data")
           alert(data)
           this.loggedInUser=data

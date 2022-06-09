@@ -1,7 +1,7 @@
 
     
-<div class="container">
-    <h1>Transaction Page</h1>
+<div class="container m-5">
+    <h1 style="margin-left: 100px;">Transaction Details</h1>
 <form [formGroup]="transactionForm">
   <div class="form-group row" style="margin-left: 15px;">
     Amount
@@ -19,6 +19,7 @@
     <input class="form-check-input" style="margin-left: 27px;" type="radio" name="transactionType" id="exampleRadios1" value="WITHDRAW" formControlName="transactionType">
     
   </div>
-  <button class="btn btn-info" (click)="DoTransaction()" style="margin-left: 15px;">Submit</button>
+  <button class="btn btn-info my-2" (click)="DoTransaction()" style="margin-left: 15px; margin-top: 20px;">Submit</button>
+  <h3 class="text-success">{{transactionStatus}}</h3>
 </form>
 </div>

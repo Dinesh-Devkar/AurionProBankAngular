@@ -18,6 +18,8 @@ import { PassbookPageComponent } from './passbook-page/passbook-page.component';
 import { AccountsDetailsComponent } from './accounts-details/accounts-details.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { CustomersPageComponent } from './customers-page/customers-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DeactiveAccountPageComponent } from './deactive-account-page/deactive-account-page.component';
 
 
 
@@ -32,7 +34,9 @@ import { CustomersPageComponent } from './customers-page/customers-page.componen
     PassbookPageComponent,
     AccountsDetailsComponent,
     AdminDashboardComponent,
-    CustomersPageComponent
+    CustomersPageComponent,
+    PageNotFoundComponent,
+    DeactiveAccountPageComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthUserService } from '../services/auth-user.service';
 import { TransactionServiceService } from '../services/transaction-service.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { TransactionServiceService } from '../services/transaction-service.servi
 export class PassbookPageComponent implements OnInit {
 
   transactionsList:any
-  constructor(private http:TransactionServiceService) {
+  constructor(private http:TransactionServiceService,private authService:AuthUserService) {
     console.log("Total Transactions : ")
     this.http.GetPassbook().subscribe((res)=>{
       console.log(res)
@@ -24,6 +25,13 @@ export class PassbookPageComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+    this.http.RefreshRequired.subscribe(res=>{
+      this.authService.GetPassbook().subscribe((res)=>{
+        console.log(res)
+        this.transactionsList=res;
+      })
+      
+    })
   }
 
 }

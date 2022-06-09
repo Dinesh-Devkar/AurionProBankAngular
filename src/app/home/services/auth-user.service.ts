@@ -16,13 +16,14 @@ export class AuthUserService {
     isSuccess: false,
     message: "",
     balance:0,
+    status:'',
     token: ""
   }
   constructor(private http:HttpClient) { }
-  // private _refreshrequired=new Subject<void>();
-  // get RefreshRequired(){
-  //   return this._refreshrequired;
-  // }
+  private _refreshrequired=new Subject<void>();
+  get RefreshRequired(){
+    return this._refreshrequired;
+  }
  
   RegisterAccount(account:{
     accountNumber: number,
@@ -31,7 +32,10 @@ export class AuthUserService {
     roll: string,
     password: string
   }){
-    return this.http.post("http://localhost:5000/api/v1/Account/AddAccount",account);
+    return this.http.post("http://localhost:5000/api/v1/Account/Register",account);
+  }
+  IsLoggedIn(){
+    return localStorage.getItem('token')!=null;
   }
 
   VerifyUser(user:{userName:string,password:string}):any{
@@ -44,7 +48,15 @@ export class AuthUserService {
     console.log("User : ",user)
     console.log(user.userName+"     "+user.password)
     
-    return this.http.post("http://localhost:5000/api/v1/Account/LoginAccount",user);
+    return this.http.post("http://localhost:5000/api/v1/Account/LoginAccount",user).pipe(
+      tap(()=>{
+        
+        this.RefreshRequired.next();
+      }))
+  }
+  GetPassbook(){
+    
+    return this.http.get(`http://localhost:5000/api/v1/Account/${this.loggedInUser.id}/Passbook`)
   }
 
   GetAllAccounts(){
@@ -66,5 +78,8 @@ export class AuthUserService {
   }
   SetBalance(amount:number){
      this.loggedInUser.balance+=amount
+  }
+  ModifyAccountStatus(user:{accountNumber:number,newStatus:string}){
+    return this.http.post(`http://localhost:5000/api/v1/Account/${user.accountNumber}/ModifyAccountStatus`,user)
   }
 }

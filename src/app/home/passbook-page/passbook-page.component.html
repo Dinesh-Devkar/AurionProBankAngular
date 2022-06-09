@@ -9,7 +9,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let transaction of transactionsList">
+          <tr *ngFor="let transaction of transactionsList.slice().reverse()">
             <th scope="row">{{transaction.name}}</th>
             <td>{{transaction.balance}}</td>
             <td>{{transaction.transactionDate}}</td>

@@ -1,10 +1,8 @@
-<div class="container">
+<!-- <div class="container">
     <h1>Hello Admin</h1>
     <div class="row">
         <div class="col-md-5 border">
-            <!-- <h2>Name :  {{loggedInUser.name}}</h2>
-            <h2>AccountNumber : {{loggedInUser.accountNumber}}</h2>
-            <h2>Balance : &#8377; {{[loggedInUser.balance]}}</h2> -->
+          
             <app-accounts-details></app-accounts-details>
         </div>
         <div class="col-md-1"></div>
@@ -27,4 +25,84 @@
         </div>
     </div>
 </div>
+ -->
 
+ <div class="container">
+    <div class="row">
+        <div class="col-md-3 border shadow-lg " style="height: 400px;">
+            <app-accounts-details></app-accounts-details>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8 border shadow-lg row " id="dotransaction" [hidden]="HideBox"  style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; width: 100%;">
+            <div class="col-md-1 m-2">
+                <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                    <img src="assets/passbook.png" class="w-70" height="80" />
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-info" (click)="ShowPassbook()">PassBook</button>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+
+            <div class="col-md-1 m-2">
+
+                <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                    <img src="assets/transaction.png" class="w-70" height="80" />
+                </div>
+                <div class="card-body">
+
+                    <button class="btn btn-info" (click)="ShowTransaction()">Transaction</button>
+
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+
+            <div class="col-md-1 m-2">
+                <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                    <img src="assets/people.png" class="w-70" height="80" />
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-info" (click)="ShowCustomers()">Customers</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-8 border shadow-lg p-3 mb-5 bg-white rounded" [hidden]="ShowPassbookPage"
+            style="height: 400px;">
+            <app-passbook-page></app-passbook-page>
+            <button class="btn btn-info" (click)="ShowPassbook()">Back</button>
+        </div>
+        <div class="col-md-8 border shadow-lg p-3 mb-5 bg-white rounded" [hidden]="ShowTransactionPage"
+            style="height: 400px;">
+            <app-transaction-page></app-transaction-page>
+            <button class="btn btn-info" (click)="ShowTransaction()">Back</button>
+        </div>
+        <div class="col-md-8 border shadow-lg p-3 mb-5 bg-white rounded" [hidden]="ShowCustomersPage">
+            <app-customers-page></app-customers-page>
+            <button class="btn btn-info" (click)="ShowCustomers()">Back</button>
+        </div>
+
+
+
+
+
+
+        <!-- <div class="col-md-6 border" [hidden]="HideBox" style="height: 400px;">
+            <button class="btn btn-info" (click)="ShowPassbook()">PassBook</button>
+            <button class="btn btn-info" (click)="ShowTransaction()">Do Transaction</button>
+            <button class="btn btn-info" (click)="ShowCustomers()">Show Customers</button>
+        </div>
+        <div class="col-md-6 border" [hidden]="ShowPassbookPage">
+            <app-passbook-page></app-passbook-page>
+            <button class="btn btn-info" (click)="ShowPassbook()">Back</button>
+        </div>
+        <div class="col-md-6 border" [hidden]="ShowTransactionPage">
+            <app-transaction-page></app-transaction-page>
+            <button class="btn btn-info" (click)="ShowTransaction()">Back</button>
+        </div>
+        <div class="col-md-6 border" [hidden]="ShowCustomersPage">
+            <app-customers-page></app-customers-page>
+            <button class="btn btn-info" (click)="ShowCustomers()">Back</button>
+        </div> -->
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthUserService } from '../services/auth-user.service';
 
 @Component({
@@ -18,15 +19,17 @@ export class RegisterComponent implements OnInit {
     roll:new FormControl('')
   })
   
-  constructor(private authService:AuthUserService) { }
+  constructor(private authService:AuthUserService,private router:Router) { }
   RegisterCustomer(){
-    //console.log(this.registerForm.value)
-    //alert(this.registerForm.value)
+    alert("Inside Registration Form")
+    console.log(this.registerForm.value)
+    alert(this.registerForm.value)
     if(this.registerForm.valid)
     {
       this.authService.RegisterAccount(this.registerForm.value).subscribe((res:any)=>{
         alert(res);
         this.result=res
+        this.router.navigate(['/landing'])
       })
     }
   }
