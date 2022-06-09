@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
     name:new FormControl('',Validators.required),
     balance:new FormControl('',[Validators.required,Validators.min(this.minimumBalance)]),
     password:new FormControl('',Validators.required),
-    roll:new FormControl('')
+    roll:new FormControl('',Validators.required)
   })
   
   constructor(private authService:AuthUserService) { }

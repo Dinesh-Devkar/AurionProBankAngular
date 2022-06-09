@@ -1,6 +1,6 @@
 <div class="container my-3 ">
     <div class="row">
-        <div class="col-md-5 border shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="col-md-5 border shadow-lg  bg-white rounded">
             <!-- <h2>Name :  {{loggedInUser.name}}</h2>
             <h2>AccountNumber : {{loggedInUser.accountNumber}}</h2>
             <h2>Balance : &#8377; {{[loggedInUser.balance]}}</h2> -->
@@ -8,59 +8,51 @@
         </div>
         <div class="col-md-1"></div>
 
-        <div class="col-md-6 border" id="dotransaction" [hidden]="HideBox">
-            <button class="btn btn-info" (click)="ShowPassbook()">PassBook</button>
-            <button class="btn btn-info" (click)="ShowTransaction()">Do Transaction</button>
-        </div>
-        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-            <img src="assets/passbook.png" class="w-70" height="80" />
-        </div>
-        <div class="card-body">
+        <div class="col-md-6 border shadow-lg" id="dotransaction" [hidden]="HideBox">
 
-            <button class="btn btn-info" (click)="ShowPassbook()">PassBook</button>
+            <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                <img src="assets/passbook.png" class="w-70" height="80" />
+            </div>
+            <div class="card-body">
+                <button class="btn btn-info" (click)="ShowPassbook()">PassBook</button>
+            </div>
+            <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                <img src="assets/transaction.png" class="w-70" height="80" />
+            </div>
+            <div class="card-body">
+
+                <button class="btn btn-info" (click)="ShowTransaction()">Do Transaction</button>
+
+            </div>
+            <!-- <div class="card" style="margin-top: 100px; border: none; margin-left: 20px;"> -->
+
+            <!-- </div> -->
+
 
         </div>
+        <div class="col-md-6 border shadow-lg p-3 mb-5 bg-white rounded" [hidden]="ShowPassbookPage"
+            style="height: 400px;">
+            <app-passbook-page></app-passbook-page>
+            <button class="btn btn-info" (click)="ShowPassbook()">Back</button>
+        </div>
+        <div class="col-md-6 border shadow-lg p-3 mb-5 bg-white rounded" [hidden]="ShowTransactionPage"
+            style="height: 400px;">
+
+            <app-transaction-page></app-transaction-page>
+            <button class="btn btn-info" (click)="ShowTransaction()">Back</button>
+        </div>
+
     </div>
-    <div class="card" style="margin-top: 100px; border: none; margin-left: 20px;">
-        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-            <img src="assets/transaction.png" class="w-70" height="80" />
-        </div>
-        <div class="card-body">
 
-            <button class="btn btn-info" (click)="ShowTransaction()">Do Transaction</button>
-
-        </div>
-    </div>
 
 
 
 </div>
 
 <!-- </div> -->
-<div class="col-md-6 border shadow-lg p-3 mb-5 bg-white rounded" [hidden]="ShowPassbookPage" style="height: 400px;">
-    <app-passbook-page></app-passbook-page>
-    <button class="btn btn-info" (click)="ShowPassbook()">Back</button>
-</div>
-<div class="col-md-6 border shadow-lg p-3 mb-5 bg-white rounded" [hidden]="ShowTransactionPage" style="height: 400px;">
 
-    <app-transaction-page></app-transaction-page>
-    <button class="btn btn-info" (click)="ShowTransaction()">Back</button>
-</div>
-<!-- </div> -->
-<!-- </div> -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-2 card">
-            <i class="fa-solid fa-piggy-bank"></i>
-        </div>
-        <div class="col-md-1 "></div>
-        <div class="col-md-2 card"></div>
-        <div class="col-md-1"></div>
-        <div class="col-md-2 card"></div>
-        <div class="col-md-1"></div>
-        <div class="col-md-2 card"></div>
-    </div>
-</div>
+
+
 
 
 <div class="container-fluid m-0 p-0">
