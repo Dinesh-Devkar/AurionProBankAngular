@@ -18,6 +18,10 @@ import { PassbookPageComponent } from './passbook-page/passbook-page.component';
 import { AccountsDetailsComponent } from './accounts-details/accounts-details.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { CustomersPageComponent } from './customers-page/customers-page.component';
+import { ContactComponent } from './contact/contact.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
+
 
 
 
@@ -32,7 +36,10 @@ import { CustomersPageComponent } from './customers-page/customers-page.componen
     PassbookPageComponent,
     AccountsDetailsComponent,
     AdminDashboardComponent,
-    CustomersPageComponent
+    CustomersPageComponent,
+    ContactComponent,
+    PageNotFoundComponent,
+    DeactivateAccountComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +48,8 @@ import { CustomersPageComponent } from './customers-page/customers-page.componen
     HttpClientModule,
     BrowserModule,
     RouterModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+   
     
   ],
   exports:[

@@ -9,6 +9,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthUserService } from './home/services/auth-user.service';
 import { TokenIntercepterService } from './home/services/token-intercepter.service';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
