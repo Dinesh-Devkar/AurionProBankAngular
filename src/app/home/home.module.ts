@@ -19,6 +19,8 @@ import { AccountsDetailsComponent } from './accounts-details/accounts-details.co
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { CustomersPageComponent } from './customers-page/customers-page.component';
 import { ContactComponent } from './contact/contact.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DeactivateAccountComponent } from './deactivate-account/deactivate-account.component';
 
 
 
@@ -35,7 +37,9 @@ import { ContactComponent } from './contact/contact.component';
     AccountsDetailsComponent,
     AdminDashboardComponent,
     CustomersPageComponent,
-    ContactComponent
+    ContactComponent,
+    PageNotFoundComponent,
+    DeactivateAccountComponent
   ],
   imports: [
     CommonModule,
