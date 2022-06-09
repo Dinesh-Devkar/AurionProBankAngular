@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { IUser } from '../loginform/loginform.component';
+import { Subject, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class AuthUserService {
     token: ""
   }
   constructor(private http:HttpClient) { }
+  // private _refreshrequired=new Subject<void>();
+  // get RefreshRequired(){
+  //   return this._refreshrequired;
+  // }
  
   RegisterAccount(account:{
     accountNumber: number,

@@ -10,7 +10,9 @@ const routes: Routes = [{path:"register",component:RegisterComponent},
                         {path:"landing",component:LandingComponent},
                         {path:"",component:LandingComponent},
                         {path:"customerDashboard",component:CustomerDashboardComponent},
+                        {path:"adminDashboard",component:AdminDashboardComponent},
                         {path:"login",component:LoginformComponent}
+
                         
 ];
 
