@@ -35,7 +35,6 @@ export class LoginformComponent implements OnInit {
 
   VerifyUser(){
   //console.log(this.loginForm.value)
-  console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
   this.userData=this.loginForm.value
   this.auth.VerifyUser(this.userData).subscribe((res:IUser)=>{
     this.loggedInUser=res;

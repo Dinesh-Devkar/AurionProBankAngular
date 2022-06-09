@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  ShowLogInLogOutBtn:boolean=true
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+  LogOut(){
+    localStorage.clear();
+this.router.navigate(['/landing'])
+  }
+  ToggleButton(){
+    this.ShowLogInLogOutBtn=!this.ShowLogInLogOutBtn
   }
 
 }

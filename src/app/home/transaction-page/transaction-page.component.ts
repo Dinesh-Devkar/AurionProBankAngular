@@ -20,17 +20,26 @@ export class TransactionPageComponent implements OnInit {
     this.loggeInUser=userService.GetLoggedInUser()
    }
 
-  DoTransaction(){
+   async DoTransaction(){
     if(this.transactionForm.valid){
       alert(this.transactionForm.value.amount+"     "+this.transactionForm.value.transactionType)
-      this.http.DoTransaction(this.transactionForm.value).subscribe(res=>{
+        this.http.DoTransaction(this.transactionForm.value).subscribe(res=>{
+          alert("Inside Transaction")
         alert(res)
-        this.userService.UpdateAccountData(this.userService.GetLoggedInUser().id).subscribe((data)=>{
-          //this.userService.SetLoggedInUser(data);
-          let u:any=data
-          console.log(data);
-          alert(u.balance);
-        })
+
+        //console.log("TTTTTTTTTTTTTTTTTTTT")
+        console.log(res)
+        
+      })
+      this.userService.UpdateAccountData(this.userService.GetLoggedInUser().id).subscribe((data)=>{
+        //this.userService.SetLoggedInUser(data);
+        let u:any=data
+        console.log(data);
+        alert(u.balance);
+        // this.http.RefreshRequired.subscribe(res=>{
+        //   this.loggeInUser=this.userService.GetLoggedInUser();
+        //   alert("Demo");
+        // })
       })
       return;
     }

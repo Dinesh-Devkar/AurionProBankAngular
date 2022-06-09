@@ -9,7 +9,7 @@ import { AuthUserService } from '../services/auth-user.service';
 })
 export class CustomerDashboardComponent implements OnInit {
 
- loggedInUser:IUser
+  @Input() loggedInUser:IUser
   ShowPassbookPage:boolean=true;
   HideBox:boolean=false;
   ShowTransactionPage:boolean=true;
