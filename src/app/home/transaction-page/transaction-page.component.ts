@@ -23,14 +23,16 @@ export class TransactionPageComponent implements OnInit {
 
    async DoTransaction(){
     if(this.transactionForm.valid){
-      alert(this.transactionForm.value.amount+"     "+this.transactionForm.value.transactionType)
+      
         this.http.DoTransaction(this.transactionForm.value).subscribe((res:any)=>{
-          alert("Inside Transaction")
-        alert(res)
+          
+        
         this.transactionStatus=res;
         setTimeout(()=>{
           this.transactionStatus=''
         },3000)
+        this.transactionForm.controls['amount'].reset()
+        this.transactionForm.controls['transactionType'].reset()
         //console.log("TTTTTTTTTTTTTTTTTTTT")
         console.log(res)
       })
@@ -38,7 +40,7 @@ export class TransactionPageComponent implements OnInit {
         //this.userService.SetLoggedInUser(data);
         let u:any=data
         console.log(data);
-        alert(u.balance);
+        
         // this.http.RefreshRequired.subscribe(res=>{
         //   this.loggeInUser=this.userService.GetLoggedInUser();
         //   alert("Demo");
@@ -46,7 +48,10 @@ export class TransactionPageComponent implements OnInit {
       })
       return;
     }
-    alert("All Fields Are required")
+    this.transactionStatus="All Fields Are Required";
+    setTimeout(()=>{
+      this.transactionStatus=''
+    },5000)
     
   }
   ngOnInit(): void {

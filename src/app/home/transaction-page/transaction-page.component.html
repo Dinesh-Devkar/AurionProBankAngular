@@ -20,6 +20,6 @@
     
   </div>
   <button class="btn btn-info my-2" (click)="DoTransaction()" style="margin-left: 15px; margin-top: 20px;">Submit</button>
-  <h3 class="text-success">{{transactionStatus}}</h3>
+  <h3  [ngClass]="{redClass: transactionStatus=='All Fields Are Required',greenClass:transactionStatus=='Transaction Successfull'}">{{transactionStatus}}</h3>
 </form>
 </div>

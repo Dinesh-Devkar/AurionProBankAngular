@@ -14,6 +14,7 @@ export class CustomerDashboardComponent implements OnInit {
   HideBox:boolean=false;
   ShowTransactionPage:boolean=true;
   constructor(private authService:AuthUserService) {
+    
     this.loggedInUser=authService.GetLoggedInUser();
    }
   ShowPassbook(){
@@ -26,6 +27,7 @@ export class CustomerDashboardComponent implements OnInit {
     this.ShowTransactionPage=!this.ShowTransactionPage
   }
   ngOnInit(): void {
+    
   }
 
 }

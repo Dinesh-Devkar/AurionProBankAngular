@@ -24,14 +24,12 @@ export class AccountsDetailsComponent implements OnInit {
     //   //alert("Demo");
     // },1000)
     this.transactionService.RefreshRequired.subscribe(res=>{
-      alert("Subscribe Transaction : ")
+      
       // this.loggedInUser=this.userService.GetLoggedInUser();
       // alert(this.loggedInUser.name+"         "+this.loggedInUser.balance);
-      alert("Logged In User Id : "+this.id)
-      alert(this.loggedInUser.accountId);
+      
       this.result=this.userService.UpdateAccountData(this.id).subscribe(data=>{
-          alert("Updated Data")
-          alert(data)
+          
           this.loggedInUser=data
           console.log(data);
       })

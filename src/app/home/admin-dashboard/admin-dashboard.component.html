@@ -28,7 +28,7 @@
  -->
 
  <div class="container">
-    <div class="row">
+    <div class="row my-5">
         <div class="col-md-3 border shadow-lg " style="height: 400px;">
             <app-accounts-details></app-accounts-details>
         </div>
@@ -38,7 +38,7 @@
                 <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                     <img src="assets/passbook.png" class="w-70" height="80" />
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="padding: 20px 0px;">
                     <button class="btn btn-info" (click)="ShowPassbook()">PassBook</button>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                 <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                     <img src="assets/transaction.png" class="w-70" height="80" />
                 </div>
-                <div class="card-body">
+                <div class="card-body"  style="padding: 20px 0px;">
 
                     <button class="btn btn-info" (click)="ShowTransaction()">Transaction</button>
 
@@ -61,7 +61,7 @@
                 <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                     <img src="assets/people.png" class="w-70" height="80" />
                 </div>
-                <div class="card-body">
+                <div class="card-body"  style="padding: 20px 0px;">
                     <button class="btn btn-info" (click)="ShowCustomers()">Customers</button>
                 </div>
             </div>
@@ -104,5 +104,63 @@
             <app-customers-page></app-customers-page>
             <button class="btn btn-info" (click)="ShowCustomers()">Back</button>
         </div> -->
+    </div>
+</div>
+<div class="container-fluid my-5 p-0">
+    <h4 class="mt-4 mb-5" style="margin-left: 30px;"><strong>Recharge & Pay Bills on AurionPro</strong></h4>
+    <div class="row text-center">
+        <div class="col-md-3 mb-4">
+            <div class="card" style="border:none;">
+                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                    data-mdb-ripple-color="light">
+                    <img src="assets/smartphone.png" class="w-40" height="60" />
+                </div>
+                <div class="card-body">
+                    <a href="" class="text-reset">
+                        <p>Recharge Mobile<p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card" style="border:none;">
+                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                    data-mdb-ripple-color="light">
+                    <img src="assets/gas-bottle.png" class="w-40" height="60" />
+                </div>
+                <div class="card-body">
+                    <a href="" class="text-reset">
+                        <p>Book Gas Cylinder<p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card" style="border:none;">
+                <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                    <img src="assets/light-bulb.png" class="w-40" height="60" />
+                </div>
+                <div class="card-body">
+                    <a href="" class="text-reset">
+                        <p>Pay Electricity Bill <p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card" style="border:none;">
+                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                    data-mdb-ripple-color="light">
+                    <img src="assets/satellite-dish.png" class="w-40" height="60" />
+                </div>
+                <div class="card-body">
+                    <a href="" class="text-reset">
+                        <p>Recharge DTH Connection<p>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

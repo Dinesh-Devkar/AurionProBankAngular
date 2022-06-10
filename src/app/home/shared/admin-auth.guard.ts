@@ -12,10 +12,10 @@ export class AdminAuthGuard implements CanActivate {
   }
   canActivate() {
     if(this.authService.GetLoggedInUser().roll=="A"){
-      alert("Admin Guard Working Properly")
+      
       return true;
     }
-    alert("Admin Guard Not Working Properly")
+    
     this.router.navigate(['/landing'])
     return false;
     

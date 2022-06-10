@@ -19,3 +19,11 @@ input:focus + label, input:not(:placeholder-shown) + label {
     opacity:1;
     transform: scale(0.75) translateY(-70%) translateX(-14px);
 }
+
+.greenClass{
+    
+    color: rgb(15, 255, 83);
+}
+.redClass{
+    color: red;
+}

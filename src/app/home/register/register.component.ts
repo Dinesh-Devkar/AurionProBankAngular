@@ -10,29 +10,29 @@ import { AuthUserService } from '../services/auth-user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  result:string=''
   registerForm=new FormGroup({
     accountNumber:new FormControl('',[Validators.required]),
-    name:new FormControl(''),
-    balance:new FormControl(''),
-    password:new FormControl(''),
-    roll:new FormControl('')
+    name:new FormControl('',[Validators.required]),
+    balance:new FormControl('',[Validators.required]),
+    password:new FormControl('',[Validators.required]),
+    roll:new FormControl('',[Validators.required])
   })
   
   constructor(private authService:AuthUserService,private router:Router) { }
   RegisterCustomer(){
-    alert("Inside Registration Form")
-    console.log(this.registerForm.value)
-    alert(this.registerForm.value)
+
     if(this.registerForm.valid)
     {
-      this.authService.RegisterAccount(this.registerForm.value).subscribe((res:any)=>{
-        alert(res);
-        this.result=res
-        this.router.navigate(['/landing'])
-      })
+        this.authService.RegisterAccount(this.registerForm.value).subscribe((res:any)=>{
+          alert(res);
+          
+          this.router.navigate(['/landing'])
+          return
+        })
+      }
+  
     }
-  }
+  
 
   ngOnInit(): void {
   }
